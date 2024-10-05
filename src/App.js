@@ -315,6 +315,13 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     getMovieDetails();
   }, [selectedId]);
 
+  useEffect(
+    function () {
+      document.title = `Movie | ${title}`;
+    },
+    [title]
+  );
+
   return (
     <>
       {error && <ErrorMessage message={error} />}{" "}
